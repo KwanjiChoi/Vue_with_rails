@@ -32,29 +32,18 @@
 // </div>
 
 
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue'
+import Vuex from 'vuex'
+import App from '../app.vue'
+
+Vue.use(Vuex)
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    el: '#app',
-    template: `
-    <h1> Hello Vue </h1>
-    `
-  })
-
   new Vue({
-    el: '#sample',
-
-    data: {
-      message: 'こんばんは'
-    },
-
-    template: `
-    <div>
-      <h1> {{ $data.message }} </h1>
-    </div>
-    `
+    el: '#app',
+    render: (h) => h(App)
   })
+
 })
 
