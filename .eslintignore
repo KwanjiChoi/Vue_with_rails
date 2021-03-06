@@ -1,0 +1,4 @@
+app/javascript/channels
+app/javascript/packs/application.js
+app/javascript/packs/hello_vue.js
+node_modules/*

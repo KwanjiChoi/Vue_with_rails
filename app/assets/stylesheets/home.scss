@@ -1,0 +1,73 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.list {
+  position: relative;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  transition: all 0.5s;
+  
+  &__delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    
+    &::before, &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70%;
+      height: 2px;
+      background-color: #ccc;
+      content: '';
+    }
+    
+    &::before {
+      transform: translate3d(-50%, -50%, 0) rotate(45deg);
+    }
+    
+    &::after {
+      transform: translate3d(-50%, -50%, 0) rotate(135deg);
+    }
+  }
+}
+
+.flip {
+  // 要素が動くときにtransitionを設定する（.itemでtransitionを設定しているため-moveで書く必要はない）
+  // &-move {
+  //   transition: transform 0.5s;
+  // }
+  
+  // 要素が入るときのアニメーション
+  &-enter {
+    &-active {
+      opacity: 0;
+      transform: translate3d(0, -30px, 0);
+    }
+    &-to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  // 要素が消える時のアニメーション
+  &-leave {
+    &-active {
+      position: absolute;
+    }
+    &-to {
+      opacity: 0;
+      transform: translate3d(0, -30px, 0);
+    }
+  }
+}

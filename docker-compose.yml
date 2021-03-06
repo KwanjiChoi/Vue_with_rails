@@ -1,0 +1,52 @@
+version: '3'
+
+volumes:
+  db-data:
+  redis:
+  bundle:
+  node_modules:
+
+services:
+  web:
+    build: .
+    command: >
+      bash -c "rm -f tmp/pids/server.pid &&
+               bundle exec foreman start -f Procfile.dev"
+    ports:
+      - '3000:3000'
+      - '3035:3035'
+    volumes:
+      - '.:/vue_with_rails'
+      - 'bundle:/usr/local/bundle:cached'
+      - 'node_modules:/vue_with_rails/node_modules'
+      - '/vue_with_rails/vendor'
+      - '/vue_with_rails/tmp'
+      - '/vue_with_rails/log'
+      - '/vue_with_rails/.git'
+    environment:
+      - 'MYSQL_PASSWORD=mysql'
+      - 'WEBPACKER_DEV_SERVER_INLINE=true'
+      - 'WEBPACKER_DEV_SERVER_HMR=false' 
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+      - redis
+    links:
+      - db
+  
+  db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=mysql'
+    volumes:
+      - 'db-data:/var/lib/mysql'
+  
+  redis:
+    image: redis:latest
+    command: redis-server
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
