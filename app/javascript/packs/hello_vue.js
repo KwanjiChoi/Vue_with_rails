@@ -38,12 +38,10 @@ import App from '../app.vue'
 
 Vue.use(Vuex)
 
-
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#app',
     render: (h) => h(App)
   })
-
 })
 

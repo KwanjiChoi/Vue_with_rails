@@ -8,9 +8,30 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-import './hello_vue.js';
 import 'bootstrap';
 import '../stylesheets/application.scss';
+
+import Vue from 'vue';
+import Vuex from 'vuex';
+import App from '../app.vue';
+import Show from '../show.vue';
+
+Vue.use(Vuex)
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Vue({
+    el: '#app',
+    render: (h) => h(App)
+  })
+
+
+  new Vue({
+    el: '#show',
+    data: {
+      message: 'Hello show'
+    }
+  })
+})
 
 
 
