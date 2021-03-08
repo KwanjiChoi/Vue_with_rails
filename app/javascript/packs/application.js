@@ -14,7 +14,7 @@ import '../stylesheets/application.scss';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import App from '../app.vue';
-import Show from '../show.vue';
+import '../show.vue';
 
 Vue.use(Vuex)
 
