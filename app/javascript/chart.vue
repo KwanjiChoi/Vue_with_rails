@@ -1,7 +1,7 @@
 <template>
   <div class="small">
     <line-chart :chart-data="datacollection" />
-    <button @click="fillData()">
+    <button @click="fillData()" class='btn btn-primary mt-4 ml-4'>
       Randomize
     </button>
   </div>
@@ -16,7 +16,7 @@ export default {
   },
   data () {
     return {
-      datacollection: null
+      datacollection: { labels:[], datasets: [] }
     };
   },
   mounted () {
