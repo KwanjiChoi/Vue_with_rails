@@ -1,7 +1,7 @@
 import App from '../app.vue';
 import Vue from 'vue';
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#app',
     render: (h) => h(App)

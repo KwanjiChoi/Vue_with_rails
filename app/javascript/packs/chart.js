@@ -1,7 +1,7 @@
 import Chart from '../chart.vue';
 import Vue from 'vue';
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   new Vue({
     el: '#chart',

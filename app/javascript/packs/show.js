@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import '../show.vue';
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   new Vue({
     el: '#show',
