@@ -18,7 +18,7 @@ import Show from '../show.vue';
 
 Vue.use(Vuex)
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   new Vue({
     el: '#app',
     render: (h) => h(App)
