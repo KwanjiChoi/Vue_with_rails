@@ -15,6 +15,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import App from '../app.vue';
 import '../show.vue';
+import Chart from '../chart.vue';
 
 Vue.use(Vuex)
 
@@ -24,6 +25,10 @@ document.addEventListener('turbolinks:load', () => {
     render: (h) => h(App)
   })
 
+  new Vue({
+    el: '#chart',
+    render: (h) => h(Chart)
+  })
 
   new Vue({
     el: '#show',
