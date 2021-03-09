@@ -8,7 +8,9 @@
 </template>
 
 <script>
-import LineChart from './LineChart.js';
+import { Line, mixins } from 'vue-chartjs';
+const { reactiveProp } = mixins;
+
 
 export default {
   components: {
