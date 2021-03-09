@@ -1,6 +1,20 @@
 import Vue from 'vue';
 import '../show.vue';
 
+var component = {
+  data: function(){
+    return {
+      count: 0
+    };
+  },
+  template: '<p>{{count}}<button @click="increment" class="btn btn-primary">+1</button></p>',
+  methods: {
+    increment: function(){
+      this.count += 1;
+    }
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 
   new Vue({
@@ -52,6 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
       countUp: function(){
         this.count += 1;
       }
+    }
+  });
+
+  new Vue({
+    el: '#component',
+    components: {
+      'sample-component': component
     }
   });
 });
