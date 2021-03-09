@@ -4,4 +4,6 @@ class HomeController < ApplicationController
   def show; end
 
   def chart; end
+
+  def component; end
 end
