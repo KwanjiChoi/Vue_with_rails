@@ -2,7 +2,27 @@
 
 <div class="container pt-5">
   <div id="show">
-    {{ message }}
+    <div>{{ message }}</div>
+    <p>{{ datetime }}</p>
+    <p>{{ hege }}</p>
+    <button @click='reverse' class='btn btn-primary'>反転</button>
+  </div>
+
+  <div id="vind">
+    <a v-bind:href="url">Qiita</a>
+  </div>
+
+  <div id="input">
+    <input type="text" v-model='message'>
+    <p>{{ message }}</p>
+  </div>
+
+  <div id="if">
+    <button @click='countUp' class='btn btn-primary'>ボタン</button>
+    <p>{{ count }}</p>
+    <p v-if='isMultiple0f4'>4の倍数</p>
+    <p v-else-if='isMultiple0f2'>偶数</p>
+    <p v-else>奇数</p>
   </div>
 </div>
 

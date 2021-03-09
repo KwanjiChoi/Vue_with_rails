@@ -9,6 +9,7 @@ import "channels"
 
 import 'bootstrap';
 import '../stylesheets/application.scss';
+import Vue from 'vue';
 import Vuex from 'vuex';
 
 Vue.use(Vuex)
